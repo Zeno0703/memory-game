@@ -8,7 +8,12 @@
 }
 
 .card{
+    display: flex;
     color: transparent;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
     width: 8rem;
     height: 8rem;
     background-color: rgb(197, 197, 197);
@@ -34,7 +39,13 @@
 
 .card-opposite-right{
     visibility: none; 
+    display: flex;
     color: transparent;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+    transition: all 0.3s ease;
 }
 
 .card:hover{
