@@ -8,12 +8,33 @@
 }
 
 .card{
+    color: transparent;
     width: 8rem;
     height: 8rem;
     background-color: rgb(197, 197, 197);
     border-radius: 10%;
     box-shadow: 5px 5px 25px rgba(65, 65, 65, 25%);
     transition: all 0.3s ease;
+}
+
+.card-opposite{
+    display: flex;
+    color: rgb(66, 66, 66);
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+    width: 8rem;
+    height: 8rem;
+    background-color: white;
+    border-radius: 10%;
+    box-shadow: 5px 5px 25px rgba(65, 65, 65, 10%);
+    transition: all 0.3s ease;
+}
+
+.card-opposite-right{
+    visibility: none; 
+    color: transparent;
 }
 
 .card:hover{
