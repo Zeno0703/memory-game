@@ -1,4 +1,5 @@
 .memory-container{
+    padding-top: 1.5rem;
     display: grid;
     gap: 1.5rem;
     max-width: 20%;
@@ -12,6 +13,12 @@
     background-color: rgb(197, 197, 197);
     border-radius: 10%;
     box-shadow: 5px 5px 25px rgba(65, 65, 65, 25%);
+    transition: all 0.3s ease;
+}
+
+.card:hover{
+    filter: brightness(95%);
+    transform: rotateY(10deg);
 }
 
 .card:nth-child(1),
