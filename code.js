@@ -28,6 +28,7 @@ function turnCard(card){
         }
         counter = 0;
     }
+    updateFoundMissed();
 }
 
 function checkContent(){
@@ -65,14 +66,13 @@ function checkAlertWin(){
     }
 }
 
+function updateFoundMissed(){
+    document.querySelector(".found").textContent = "Found: " + found;
+    document.querySelector(".missed").textContent = "Missed: " + missed;  
+}
+
 function getAllCards(){
-    let allCards = document.querySelectorAll(".card");
-    document.querySelectorAll(".card-opposite").forEach(card => {
-        allCards.push(card);
-    });
-    document.querySelectorAll(".card-opposite-right").forEach(card => {
-        allCards.push(card);
-    });
+    let allCards = document.querySelectorAll(".card, .card-opposite, .card-opposite-right");
     return allCards;
 }
 
@@ -88,6 +88,9 @@ function randomizeContent(cards){
 function reset(){
     const allCards = getAllCards();
     turnCards(allCards);
+
+    found = 0; missed = 0;
+    updateFoundMissed();
 
     randomizeContent(cards);
     //randomizeColors();

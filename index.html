@@ -8,7 +8,9 @@
     <title>Memory</title>
 </head>
 <body>
-    <button onclick="play()">PLAY</button>
+
+    <h1>MEMORY</h1>
+    
     <div class="memory-container">
         <div class="card" onclick="turnCard(this)">A</div>
         <div class="card" onclick="turnCard(this)">C</div>
@@ -23,7 +25,17 @@
         <div class="card" onclick="turnCard(this)">B</div>
         <div class="card" onclick="turnCard(this)">E</div>
     </div>
-    <button onclick="reset()">Reset Game</button>
+
+    <div class="button-container">
+        <button id="play" onclick="play()">Play</button>
+        <button id="reset" onclick="reset()">Reset Game</button>
+    </div>
+
+    <div class="found-missed-container">
+        <div class="found">Found: 0</div>
+        <div class="missed">Missed: 0</div>
+    </div>
+    
 </body>
 
 <script src="code.js"></script>
