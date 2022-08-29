@@ -9,45 +9,33 @@ h1{
     
 }
 
-#play{
+.button{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(148, 69, 221);
     color: white;
     margin-right: 1.5rem;
     width: 10%;
     height: 25px;
     border-radius: 7.5px;
-    border: 1px solid rgb(148, 69, 221);
     font-weight: bold;
     box-shadow: 3px 3px 20px rgba(65, 65, 65, 25%);
     transition: all 0.3s ease;
 }
 
-#play:hover{
+#play{
+    background-color: rgb(148, 69, 221);
+    border: 1px solid rgb(148, 69, 221);
+}
+
+.button:hover{
     filter: brightness(95%);
     transform: rotateY(10deg);
 }
 
 #reset{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: rgb(66, 66, 66);
-    color: white;
-    width: 10%;
-    height: 25px;
-    border-radius: 7.5px;
     border: 1px solid rgb(66, 66, 66);
-    font-weight: bold;
-    box-shadow: 3px 3px 20px rgba(65, 65, 65, 25%);
-    transition: all 0.3s ease;
-}
-
-#reset:hover{
-    filter: brightness(95%);
-    transform: rotateY(10deg);
 }
 
 .found-missed-container{
