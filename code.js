@@ -1,13 +1,15 @@
 const cards = document.querySelectorAll(".card");
 const turnedCards = document.querySelectorAll(".card-opposite");
-let possibilities;
+const possibilities = ["A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "F", "F"];
 let counter = 0;
 let found = 0;
-let lost = 0;
+let missed = 0;
 
 
-window.onload = function(){
-    setTimeout(function(){ turnCards(turnedCards)}, 2000)
+function play(){
+    let allCards = getAllCards();
+    showCards(allCards);
+    setTimeout(function(){ turnCards(allCards)}, 1500);
 }
 
 
@@ -34,22 +36,7 @@ function checkContent(){
         found++
         return true;
     }
-    lost++
-}
-
-function removeCards(cards){
-    cards.forEach(card => {
-        card.className = "card-opposite-right";
-    })
-    if (checkWin()){
-        alert("You won!");
-    }
-}
-
-function showCards(cards){
-    cards.forEach(card => {
-        card.className = "card-opposite";
-    })
+    missed++
 }
 
 function turnCards(cards){
@@ -58,23 +45,52 @@ function turnCards(cards){
     })
 }
 
-function checkWin(){
+function showCards(cards){
+    cards.forEach(card => {
+        card.className = "card-opposite";
+    })
+}
+
+function removeCards(cards){
+    cards.forEach(card => {
+        card.className = "card-opposite-right";
+    })
+    checkAlertWin();
+}
+
+function checkAlertWin(){
     const rightCards = document.querySelectorAll(".card-opposite-right");
-    return rightCards.length == 12
+    if (rightCards.length == 12){
+        alert("You win!");
+    }
+}
+
+function getAllCards(){
+    let allCards = document.querySelectorAll(".card");
+    document.querySelectorAll(".card-opposite").forEach(card => {
+        allCards.push(card);
+    });
+    document.querySelectorAll(".card-opposite-right").forEach(card => {
+        allCards.push(card);
+    });
+    return allCards;
+}
+
+function randomizeContent(cards){
+    let poss = ["A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "F", "F"];
+    cards.forEach(card => {
+        const data = poss[Math.floor(Math.random() * poss.length)];
+        card.firstChild.data = data;
+        poss.splice(poss.indexOf(data), 1);
+    })
 }
 
 function reset(){
-    possibilities = ["A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "F", "F"];
-    const rightCards = document.querySelectorAll(".card-opposite-right");
-    rightCards.forEach(card => {
-        card.className = "card";
-    })
-    // werkt nog niet helemaal GOTTA FIGURE THIS OUT
-    const cards = document.querySelectorAll(".card");
-    cards.forEach(card => {
-        const data = possibilities[Math.floor(Math.random() * possibilities.length)];
-        card.firstChild.data = possibilities[Math.floor(Math.random() * possibilities.length)];
-        possibilities.splice(possibilities.indexOf(data), 1);
-        console.log(possibilities);
-    })
+    const allCards = getAllCards();
+    turnCards(allCards);
+
+    randomizeContent(cards);
+
+    showCards(allCards);
+    setTimeout(function(){ turnCards(allCards)}, 1500);
 }
