@@ -90,6 +90,7 @@ function reset(){
     turnCards(allCards);
 
     randomizeContent(cards);
+    //randomizeColors();
 
     showCards(allCards);
     setTimeout(function(){ turnCards(allCards)}, 1500);
