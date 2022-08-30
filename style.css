@@ -102,7 +102,7 @@ h1{
 }
 
 .card-opposite-right{
-    visibility: none; 
+    opacity: 0; 
     display: flex;
     color: transparent;
     justify-content: center;
@@ -128,4 +128,32 @@ h1{
 .card:nth-child(8),
 .card:nth-child(11){
     background-color: rgb(148, 69, 221);
+}
+
+@media only screen and (max-width: 768px){
+    .memory-container{
+        gap: 1rem;
+        max-width: 15%;
+    }
+    
+    .card{
+        width: 5rem;
+        height: 5rem;
+    }
+    
+    .card-opposite{
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .button-container{
+        display: flex;
+        justify-content: center;
+        margin-left: 2rem;
+        
+    }
+    
+    .button{
+        width: 6rem;
+    }
 }
