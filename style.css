@@ -117,6 +117,7 @@ h1{
     transform: rotateY(10deg);
 }
 
+
 .card:nth-child(1),
 .card:nth-child(5),
 .card:nth-child(12){

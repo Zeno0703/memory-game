@@ -6,6 +6,11 @@ let found = 0;
 let missed = 0;
 
 
+window.onload = function(){
+    //randomizeColors();
+}
+
+
 function play(){
     let allCards = getAllCards();
     showCards(allCards);
@@ -82,6 +87,18 @@ function randomizeContent(cards){
         const data = poss[Math.floor(Math.random() * poss.length)];
         card.firstChild.data = data;
         poss.splice(poss.indexOf(data), 1);
+    })
+}
+
+function randomizeColors(){
+    let numbers = [Math.floor(Math.random() * 12), Math.floor(Math.random() * 12), Math.floor(Math.random() * 12)];
+    numbers.forEach(child => {
+        document.querySelector(".card:nth-child("+ child +")").style.backgroundColor = "rgb(148, 69, 221)";
+    })
+
+    numbers = [Math.floor(Math.random() * 12), Math.floor(Math.random() * 12), Math.floor(Math.random() * 12)];
+    numbers.forEach(child => {
+        document.querySelector(".card:nth-child("+ child +")").style.backgroundColor = "rgb(66, 66, 66)";
     })
 }
 
